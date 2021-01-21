@@ -1,0 +1,45 @@
+{
+    //Preset ordering is reversed (last to first).
+    "presets": [
+        [
+            "@babel/env",
+            {
+                //Modules: false, Hey babel don’t do anything with the modules let webpack handle it.
+                "modules": false
+                // "targets": "> 0.25%, not dead",
+                // "corejs": {
+                //     "version": 3,
+                //     "proposals": true
+                // },
+                // "useBuiltIns": "usage"
+                // "debug": true
+            }
+        ],
+        [
+            "@babel/typescript",
+            {
+                "allowDeclareFields": true
+            }
+        ]
+    ],
+    //Plugins run before Presets.
+    //Plugin order is first to last.
+    "plugins": [
+        // [
+        //     "@babel/plugin-proposal-decorators",
+        //     {
+        //         "legacy": true
+        //     }
+        // ],
+        "@babel/proposal-class-properties",
+        // "@babel/proposal-object-rest-spread",
+        [
+            "@babel/plugin-transform-runtime", //target environment are not supported
+            {
+                "corejs": 3,
+                "helpers": true,
+                "regenerator": true
+            }
+        ]
+    ]
+}
