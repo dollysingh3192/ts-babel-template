@@ -19,17 +19,17 @@ module.exports = merge(commonConfig, {
   },
   module: {
     rules: [
-      // {
-      //   test: /\.ts$/,
-      //   use: 'ts-loader',
-      // },
       {
-        // Include ts, tsx, js, and jsx files.
-        test: /\.(ts|js)x?$/,
-        exclude: /node_modules/,
-        loader: require.resolve('babel-loader'),
-        query: { compact: false }
-      }
+        test: /\.ts$/,
+        use: 'ts-loader',
+      },
+      // {
+      //   // Include ts, tsx, js, and jsx files.
+      //   test: /\.(ts|js)x?$/,
+      //   exclude: /node_modules/,
+      //   loader: require.resolve('babel-loader'),
+      //   query: { compact: false }
+      // }
     ]
   },
   plugins: [],
