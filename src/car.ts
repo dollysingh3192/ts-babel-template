@@ -5,10 +5,21 @@ class Car {
         this.showToast = true;
     }
 
-    hideToast() {
+    hideToast(cbk: any) {
         setTimeout(() => {
             this.showToast = false;
-        }, 5000);
+            cbk();
+        }, 4000);
+    }
+
+    simulateSendingMessage() {
+        // Do some stuff
+        return new Promise((resolve) => {
+            setTimeout(() => {
+                this.showToast = false;
+                resolve("Hello");
+            }, 4999);
+        });
     }
 
     public go(msg: string): string {
@@ -18,3 +29,4 @@ class Car {
 }
 
 export { Car };
+

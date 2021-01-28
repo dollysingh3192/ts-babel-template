@@ -8,7 +8,7 @@ module.exports = function (config) {
     frameworks: ['jasmine'],
     // list of files / patterns to load in the browser
     files: [
-      { pattern: testPattern, watched: true }
+      { pattern: testPattern, watched: false }
     ],
     // list of files / patterns to exclude
     exclude: [
@@ -40,7 +40,7 @@ module.exports = function (config) {
     // possible values: config.LOG_DISABLE || config.LOG_ERROR || config.LOG_WARN || config.LOG_INFO || config.LOG_DEBUG
     logLevel: config.LOG_INFO,
     // enable / disable watching file and executing tests whenever any file changes
-    autoWatch: true,
+    autoWatch: false,
     // start these browsers
     browsers: ['ChromeHeadless'],
     // Continuous Integration mode
